@@ -3,7 +3,9 @@ import axios from 'axios'
 import { useEffect,useState } from 'react'
 
 export default function UserList() {
+    {/*utilisation du ussestate qui particpe a l'utilisation l'api et le mapper a la fin*/}
     const [user,setUser]=useState([])
+    {/*utilisation du ussestate pour pouvoir appeller l'api*/}
     useEffect(()=>{
         axios.get("https://jsonplaceholder.typicode.com/users")
         .then(res=>{setUser(res.data)})
@@ -11,6 +13,7 @@ export default function UserList() {
     },[])
   return (
     <>
+      {/*utilisation du state user pour afficher les donnes de l'api*/}
     {
         user.map((r,i)=>(
             <div  >
